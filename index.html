@@ -68,6 +68,24 @@
         color: white;
         text-align: center;
       }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        background-color: #f72585;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+      }
+
+      footer span {
+        cursor: pointer;
+      }
+
+      footer span:hover {
+        color: #000;
+      }
     </style>
   </head>
   <body>
@@ -76,6 +94,8 @@
       <div class="jam"></div>
       <div class="box-1"><div class="hari"></div></div>
     </div>
+
+    <footer>Created with <span> 💖</span> by : <span> Habib Ahmad</span> &copy; <span class="tahun"></span></footer>
 
     <script>
       // Jam
@@ -110,6 +130,12 @@
 
         hari.style.color = hariWaktu.getDay() % 2 == 0 ? "#fcf15c" : "#4e148c";
       });
+
+      // tahun cr selalu update
+      const crTahun = new Date();
+      const tahunCr = crTahun.getFullYear();
+
+      document.getElementsByClassName("tahun")[0].innerHTML = tahunCr;
     </script>
   </body>
 </html>
