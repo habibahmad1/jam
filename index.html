@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jam</title>
+    <style>
+      body {
+        display: flex;
+        background-color: #fefee3;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        color: #f72585;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+
+      h1:hover {
+        color: #00afb9;
+        font-size: 3.5rem;
+      }
+
+      #box {
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        background-color: #a2d2ff;
+        border-radius: 1rem;
+        margin: 0 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+      .jam {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        border-radius: 1rem;
+        transition: 1s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      #box:hover {
+        background-color: #bde0fe;
+      }
+
+      .box-1 {
+        background-color: #ff70a6;
+        border-radius: 0.8rem;
+        padding: 20px;
+        margin-top: 1rem;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .box-1:hover {
+        background-color: #4cc9f0;
+      }
+
+      .hari {
+        font-size: 2rem;
+        color: white;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🕐 Waktu 🕐</h1>
+    <div id="box">
+      <div class="jam"></div>
+      <div class="box-1"><div class="hari"></div></div>
+    </div>
+
+    <script>
+      // Jam
+      setInterval(() => {
+        const waktu = new Date();
+        const jam = document.querySelector(".jam");
+        const jamStr = waktu.getHours().toString().padStart(2, "0");
+        const menitStr = waktu.getMinutes().toString().padStart(2, "0");
+        const detikStr = waktu.getSeconds().toString().padStart(2, "0");
+        jam.innerHTML = jamStr + ":" + menitStr + ":" + detikStr;
+
+        if (detikStr % 2 == 0) {
+          document.querySelector(".jam").style.backgroundColor = "#49c6bc";
+          document.querySelector(".jam").style.transition = "0.9s";
+        } else {
+          document.querySelector(".jam").style.backgroundColor = "#c174f2";
+        }
+      });
+
+      //   Hari
+      setInterval(() => {
+        const hariWaktu = new Date();
+        const hari = document.querySelector(".hari");
+
+        const tanggalStr = hariWaktu.getDate();
+        const hariSekarang = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+        const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        const tahunStr = hariWaktu.getFullYear();
+        hari.innerHTML = hariSekarang[hariWaktu.getDay()] + " " + tanggalStr + " " + namaBulan[hariWaktu.getMonth()] + " Tahun " + tahunStr;
+
+        // Jika tanggal ganjil warna biru, genap hitam
+
+        hari.style.color = hariWaktu.getDay() % 2 == 0 ? "#fcf15c" : "#4e148c";
+      });
+    </script>
+  </body>
+</html>
