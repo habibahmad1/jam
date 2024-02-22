@@ -3,120 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To-Do List App</title>
+    <title>Test</title>
+
     <style>
       body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
+        background: url("./img/bg.png");
       }
-      .container {
-        max-width: 600px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      @font-face {
+        font-family: Alfath Signature;
+        src: url("./font/Alfath\ Signature.ttf") format("truetype");
       }
-      h1 {
-        text-align: center;
-      }
-      input {
-        width: calc(100% - 120px); /* Mengurangi lebar input dengan lebar tombol */
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        display: inline-block; /* Menjadikan input dan tombol dalam satu baris */
-        vertical-align: middle; /* Mengatur posisi vertikal */
-      }
-      button {
-        width: 100px; /* Menentukan lebar tombol */
-        padding: 10px;
-        margin-bottom: 10px;
-        border: none;
-        border-radius: 5px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block; /* Menjadikan input dan tombol dalam satu baris */
-        vertical-align: middle; /* Mengatur posisi vertikal */
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      li {
-        padding: 10px;
-        background-color: aquamarine;
-        border-bottom: 1px solid #000;
+
+      .card {
+        width: 300px;
+        height: 400px;
+        background-color: lightblue;
         border-radius: 10px;
-        margin: 5px;
+        margin: auto;
+        box-shadow: 5px 5px 15px black;
+        filter: grayscale(20%);
+        transition: 0.5s;
       }
-      .delete-btn {
-        float: right;
-        background-color: #ff0000;
-        color: #fff;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
+      .card:hover {
+        background-color: lightcoral;
+        color: white;
+        box-shadow: 10px 10px 15px black;
         cursor: pointer;
+      }
+      .card h1 {
+        font-family: Dancing Script, sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+      .card p {
+        font-size: 20px;
+        font-family: Alfath Signature, serif;
+        margin: 20px;
+        text-transform: capitalize;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.75);
+      }
+      .card p::first-letter {
+        font-size: 90px;
+        margin-right: 20px;
+      }
+
+      img {
+        display: block;
+        width: 300px;
+        margin: 80px auto;
+        border-radius: 50%;
+        filter: blur(0px);
+        transition: 1s cubic-bezier(1, -0.11, 0, 1.69) 2s;
+        border: 10px solid white;
+      }
+
+      .kartu:hover img {
+        filter: blur(0);
+        box-shadow: 10px 10px 5px black;
+        cursor: pointer;
+        transform: rotateY(360deg);
+      }
+
+      .kartu {
+        width: 200px;
+        height: 10px;
+        margin: 10px auto;
+        border: 2px solid black;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>To-Do List App</h1>
-      <input type="text" id="taskInput" placeholder="Add a new task..." />
-      <button id="addButton">Add Task</button>
-      <ul id="taskList"></ul>
+    <div class="card">
+      <h1>OK ini font</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia distinctio, aut ducimus corrupti minus dolores quisquam modi amet natus, odio sequi at. Laudantium, explicabo!</p>
     </div>
-
-    <script>
-      const taskInput = document.getElementById("taskInput");
-      const taskList = document.getElementById("taskList");
-      const addButton = document.getElementById("addButton");
-
-      // Menambahkan event listener ke tombol untuk menangkap ketika tombol ditekan
-      addButton.addEventListener("click", addTask);
-
-      // Menambahkan event listener ke elemen input untuk menangkap ketika tombol "Enter" ditekan
-      taskInput.addEventListener("keypress", function (e) {
-        // Jika tombol yang ditekan adalah "Enter"
-        if (e.key === "Enter") {
-          addTask();
-        }
-      });
-
-      // Fungsi untuk menambahkan tugas ke dalam daftar tugas
-      function addTask() {
-        // Mengambil teks dari input dan menghapus spasi di awal dan akhir teks
-        const taskText = taskInput.value.trim();
-        // Jika teks tidak kosong
-        if (taskText !== "") {
-          // Membuat elemen li baru
-          const li = document.createElement("li");
-          // Menambahkan teks tugas ke elemen li
-          li.textContent = taskText;
-          // Membuat tombol hapus baru
-          const deleteBtn = document.createElement("button");
-          // Menambahkan teks 'Delete' ke tombol hapus
-          deleteBtn.textContent = "Delete";
-          // Menambahkan kelas 'delete-btn' ke tombol hapus
-          deleteBtn.classList.add("delete-btn");
-          // Menambahkan event listener ke tombol hapus untuk menghapus elemen li saat tombol ditekan
-          deleteBtn.addEventListener("click", function () {
-            li.remove();
-          });
-          // Menambahkan tombol hapus ke elemen li
-          li.appendChild(deleteBtn);
-          // Menambahkan elemen li ke elemen ul
-          taskList.appendChild(li);
-          // Mengosongkan nilai input
-          taskInput.value = "";
-        }
-      }
-    </script>
+    <div class="kartu">
+      <img src="./img/NGNL.jpg" alt="sample" />
+    </div>
   </body>
 </html>
