@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <title>CSS Layouting</title>
+    <style>
+      button {
+        display: inline-block;
+        margin-left: 100px;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      img {
+        transition: 1s;
+      }
+      img:hover {
+        border-radius: 20px;
+        /* box-shadow: 0 0px 0px 5px black; */
+        filter: drop-shadow(0px 0px 5px blue);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <h1>CSS Layouting</h1>
+    </section>
+
+    <section class="navbar">
+      <nav>
+        <a href="">Home</a>
+        <a href="">Blog</a>
+        <a href="">About</a>
+        <a href="">Contact</a>
+      </nav>
+    </section>
+
+    <section class="content">
+      <h2>My <span> Article </span></h2>
+      <h2>My <span> Article </span></h2>
+      <img src="./img/NGNL.jpg" alt="content" width="200px" />
+      <img src="./img/NGNL.jpg" alt="content" width="200px" />
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus libero ducimus laudantium ab iure soluta excepturi aliquam deleniti expedita aspernatur, consectetur sit beatae, explicabo temporibus neque odio dolor ad, rerum
+        molestiae tempore ullam. Nemo, eligendi. Quae, quis assumenda perferendis omnis ad iusto, dicta molestiae minima vel eligendi nisi laborum soluta illum excepturi quas rerum, nulla accusamus dolor beatae placeat doloremque saepe
+        laudantium. Labore maxime in itaque modi doloribus eveniet, veniam libero porro, adipisci laborum voluptatem!
+      </p>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus libero ducimus laudantium ab iure soluta excepturi aliquam deleniti expedita aspernatur, consectetur sit beatae, explicabo temporibus neque odio dolor ad, rerum
+        molestiae tempore ullam. Nemo, eligendi. Quae, quis assumenda perferendis omnis ad iusto, dicta molestiae minima vel eligendi nisi laborum soluta illum excepturi quas rerum, nulla accusamus dolor beatae placeat doloremque saepe
+        laudantium. Labore maxime in itaque modi doloribus eveniet, veniam libero porro, adipisci laborum voluptatem!
+      </p>
+      <button class="hapusGambar">Hapus Img</button>
+      <button class="hapusParagraf">Hapus Paragraf</button>
+    </section>
+    <button class="reset">Clear Page</button>
+    <footer>
+      Copyright &copy;
+      <span class="hariIni"></span>,
+      <span class="tanggalIni"></span>
+      <span class="bulanIni"></span>
+      <span class="tahunIni"></span>
+      | <a href="#">Habib Ahmad</a>
+    </footer>
+
+    <script>
+      // Ambil tahun saat ini
+      const tahun = new Date().getFullYear();
+      // Masukkan Ke HTML dengan class tahunIni
+      document.querySelector(".tahunIni").textContent = tahun;
+
+      //   Ambil bulan saat ini
+      const bulan = new Date().getMonth();
+      //   Buat nama bulan agar bisa di panggil
+      const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+      //   Masukkan ke HTML dengan class bulanIni
+      document.querySelector(".bulanIni").textContent = namaBulan[bulan];
+
+      //   Ambil tanggal saat ini
+      const tanggal = new Date().getDate();
+      // Masukkan ke HTML dengan class tanggalIni
+      document.querySelector(".tanggalIni").textContent = tanggal;
+
+      // Ambil Hari saat ini
+      const hari = new Date().getDay();
+      // Buat nama hari agar dapat diconvert dari number ke nama
+      const namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+      // Masukkan ke HTML dengan class tanggalIni
+      document.querySelector(".hariIni").textContent = namaHari[hari];
+
+      // Membuat feature hapus gambar
+      document.querySelectorAll(".hapusGambar").forEach((hapusButton) => {
+        hapusButton.addEventListener("click", () => {
+          // Menghapus semua gambar yang berada di dalam elemen yang diklik
+          hapusButton.parentElement.querySelectorAll("img").forEach((gambar) => {
+            gambar.remove();
+          });
+        });
+      });
+
+      //   Feature Hapus Paragraf
+      document.querySelectorAll(".hapusParagraf").forEach((hapusP) => {
+        hapusP.addEventListener("click", () => {
+          hapusP.parentElement.querySelectorAll("p").forEach((p) => {
+            p.remove();
+          });
+          // Menambahkan elemen baru ke dalam elemen yang sama
+          const pesan = document.createElement("h2");
+          pesan.textContent = "Elemen telah dihapus!";
+          hapusP.parentElement.appendChild(pesan);
+        });
+      });
+
+      //   Feature Hapus Semua Element
+      document.querySelectorAll(".reset").forEach((clear) => {
+        clear.addEventListener("click", () => {
+          clear.parentElement.querySelectorAll("*").forEach((c) => {
+            c.remove();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
