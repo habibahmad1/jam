@@ -1,128 +1,173 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>CSS Layouting</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <style>
-      button {
-        display: inline-block;
-        margin-left: 100px;
-        margin-top: 10px;
-        padding: 10px;
+      body {
+        font: 16px/28px Kdam Thmor Pro, sans-serif;
+        background-color: #eaeaea;
+        margin: 0;
       }
-      img {
+
+      *::selection {
+        background-color: #ff4d6d;
+        color: white;
+      }
+
+      .container {
+        width: 800px;
+        margin: auto;
+        background-color: #fff;
+        box-shadow: 10px 10px 20px rgb(146, 226, 255), -10px -10px 20px rgb(254, 166, 224);
+      }
+
+      .container .header {
+        padding: 20px;
+      }
+
+      .container .header .title {
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .container .navbar {
+        background-color: #ff4d6d;
+      }
+
+      .container .navbar ul {
+        padding: 10px;
+        margin: 0;
+      }
+
+      .container .navbar ul li {
+        margin-right: 10px;
+      }
+
+      .container .navbar li {
+        list-style-type: none;
+        display: inline-block;
+      }
+
+      .container .navbar ul li a {
+        text-decoration: none;
+        color: #000;
+        padding: 12px;
+      }
+
+      .container .navbar ul li a:hover {
+        color: white;
+      }
+
+      .hero {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .hero img {
+        max-width: 100%;
+        height: auto;
+        background-size: cover;
+        opacity: 80%;
         transition: 1s;
       }
-      button {
-        border-radius: 10px;
-        color: white;
-        background-color: rgb(31, 199, 255);
-        /* box-shadow: 0 0px 0px 5px black; */
-        border: none;
+
+      .hero img:hover {
+        opacity: 100%;
       }
-      button:hover {
-        border: 2px solid salmon;
-        box-shadow: 5px 5px 5px black;
-        transform: scale(1.2);
+
+      .content {
+        padding: 20px;
+      }
+      .content h2 {
+        margin-top: 0;
+      }
+      .content h5 {
+        margin-top: -20px;
+        color: gray;
+        margin-bottom: 10px;
+      }
+      .content h5 a {
+        text-decoration: none;
+        color: black;
+      }
+      .content p {
+        font-family: Poppins, sans-serif;
+      }
+      footer {
+        height: 80px;
+        background-color: #000;
+        color: white;
+        text-align: center;
+      }
+      footer p {
+        padding: 20px;
+        font-size: smaller;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .container {
+          width: 100%;
+          font-size: 80%;
+        }
+        .hero {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+        }
       }
     </style>
   </head>
   <body>
-    <section class="header">
-      <h1>CSS Layouting</h1>
-    </section>
+    <div class="container">
+      <!-- Header -->
+      <section class="header">
+        <h1 class="title">My Blog</h1>
+      </section>
 
-    <section class="navbar">
-      <nav>
-        <a href="">Home</a>
-        <a href="">Blog</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
-      </nav>
-    </section>
+      <!-- Navbar -->
+      <section class="navbar">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#home">About</a></li>
+          <li><a href="#home">Product</a></li>
+          <li><a href="#home">Business</a></li>
+          <li><a href="#home">Contact</a></li>
+        </ul>
+      </section>
 
-    <section class="content">
-      <h2>My <span> Article </span></h2>
-      <h2>My <span> Article </span></h2>
-      <img src="./img/NGNL.jpg" alt="content" width="200px" />
-      <img src="./img/NGNL.jpg" alt="content" width="200px" />
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus libero ducimus laudantium ab iure soluta excepturi aliquam deleniti expedita aspernatur, consectetur sit beatae, explicabo temporibus neque odio dolor ad, rerum
-        molestiae tempore ullam. Nemo, eligendi. Quae, quis assumenda perferendis omnis ad iusto, dicta molestiae minima vel eligendi nisi laborum soluta illum excepturi quas rerum, nulla accusamus dolor beatae placeat doloremque saepe
-        laudantium. Labore maxime in itaque modi doloribus eveniet, veniam libero porro, adipisci laborum voluptatem!
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus libero ducimus laudantium ab iure soluta excepturi aliquam deleniti expedita aspernatur, consectetur sit beatae, explicabo temporibus neque odio dolor ad, rerum
-        molestiae tempore ullam. Nemo, eligendi. Quae, quis assumenda perferendis omnis ad iusto, dicta molestiae minima vel eligendi nisi laborum soluta illum excepturi quas rerum, nulla accusamus dolor beatae placeat doloremque saepe
-        laudantium. Labore maxime in itaque modi doloribus eveniet, veniam libero porro, adipisci laborum voluptatem!
-      </p>
-      <button class="hapusGambar">Hapus Img</button>
-      <button class="hapusParagraf">Hapus Paragraf</button>
-    </section>
-    <button class="reset">Clear Page</button>
-    <footer>
-      Copyright &copy;
-      <span class="hariIni"></span>,
-      <span class="tanggalIni"></span>
-      <span class="bulanIni"></span>
-      <span class="tahunIni"></span>
-      | <a href="#">Habib Ahmad</a>
-    </footer>
+      <!-- Hero IMG -->
+      <section class="hero">
+        <img src="./img/NGNL.jpg" alt="bg" />
+      </section>
 
-    <script>
-      // Ambil tahun saat ini
-      const tahun = new Date().getFullYear();
-      // Masukkan Ke HTML dengan class tahunIni
-      document.querySelector(".tahunIni").textContent = tahun;
+      <!-- Content -->
+      <article class="content">
+        <h2>Judul Artikel</h2>
+        <h5>Ditulis oleh <a href="#">Habib Ahmad</a>. 22 Februari 2024</h5>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum commodi est temporibus harum architecto ex sequi ea dolore in eaque optio nisi voluptas omnis, quo iure quae praesentium ducimus alias voluptatibus quidem dolor
+          laboriosam nihil et neque? Deserunt, culpa repudiandae.
+        </p>
 
-      //   Ambil bulan saat ini
-      const bulan = new Date().getMonth();
-      //   Buat nama bulan agar bisa di panggil
-      const namaBulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
-      //   Masukkan ke HTML dengan class bulanIni
-      document.querySelector(".bulanIni").textContent = namaBulan[bulan];
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum modi quasi quisquam nostrum, natus ducimus odit sequi itaque, nemo facere ex debitis quae a. Repudiandae, dolorum porro amet laudantium eos explicabo! Aut alias non
+          itaque mollitia sequi nesciunt, harum exercitationem ex cumque? Beatae, nesciunt esse! Magni cum est pariatur maxime adipisci veniam vel ullam aliquid quas similique? Fugiat facilis dicta necessitatibus officiis modi rem,
+          voluptate harum accusantium, placeat consequuntur asperiores eveniet? Maxime est quisquam magnam laudantium optio quidem, fuga quas molestiae labore ea maiores hic possimus officiis minima voluptatum assumenda unde error
+          repudiandae facere inventore deleniti non, saepe officia obcaecati.
+        </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur blanditiis fuga quasi sed, earum distinctio itaque? Mollitia atque nam aperiam!</p>
+      </article>
 
-      //   Ambil tanggal saat ini
-      const tanggal = new Date().getDate();
-      // Masukkan ke HTML dengan class tanggalIni
-      document.querySelector(".tanggalIni").textContent = tanggal;
-
-      // Ambil Hari saat ini
-      const hari = new Date().getDay();
-      // Buat nama hari agar dapat diconvert dari number ke nama
-      const namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
-      // Masukkan ke HTML dengan class tanggalIni
-      document.querySelector(".hariIni").textContent = namaHari[hari];
-
-      // Membuat feature hapus gambar
-      document.querySelectorAll(".hapusGambar").forEach((hapusButton) => {
-        hapusButton.addEventListener("click", () => {
-          // Menghapus semua gambar yang berada di dalam elemen yang diklik
-          hapusButton.parentElement.querySelectorAll("img").forEach((gambar) => {
-            gambar.remove();
-          });
-        });
-      });
-
-      //   Feature Hapus Paragraf
-      document.querySelectorAll(".hapusParagraf").forEach((hapusP) => {
-        hapusP.addEventListener("click", () => {
-          hapusP.parentElement.querySelectorAll("p").forEach((p) => {
-            p.remove();
-          });
-          // Menambahkan elemen baru ke dalam elemen yang sama
-          const pesan = document.createElement("h2");
-          pesan.textContent = "Elemen telah dihapus!";
-          hapusP.parentElement.appendChild(pesan);
-        });
-      });
-
-      //   Feature Hapus Semua Element
-      document.querySelectorAll(".reset").forEach((clear) => {
-        clear.addEventListener("click", () => {
-          clear.parentElement.querySelectorAll("*").forEach((c) => {
-            c.remove();
-          });
-        });
-      });
-    </script>
+      <!-- Footer -->
+      <footer><p>Copyright &copy; Habib Ahmad | 2024</p></footer>
+    </div>
   </body>
 </html>
