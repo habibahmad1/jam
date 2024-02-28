@@ -10,7 +10,7 @@
     <style>
       body {
         font: 16px/28px Kdam Thmor Pro, sans-serif;
-        background-color: #eaeaea;
+        background-image: url("./img/bg.webp");
         margin: 0;
       }
 
@@ -20,7 +20,7 @@
       }
 
       .container {
-        width: 800px;
+        width: 960px;
         margin: auto;
         background-color: #fff;
         box-shadow: 10px 10px 20px rgb(146, 226, 255), -10px -10px 20px rgb(254, 166, 224);
@@ -66,39 +66,112 @@
 
       .hero {
         width: 100%;
-        height: 300px;
+        height: 350px;
         overflow: hidden;
       }
 
       .hero img {
         max-width: 100%;
         height: auto;
-        background-size: cover;
-        opacity: 80%;
+        filter: grayscale(0);
         transition: 1s;
       }
 
       .hero img:hover {
-        opacity: 100%;
+        filter: grayscale(50%);
+        cursor: pointer;
       }
 
-      .content {
+      main {
+        width: 600px;
         padding: 20px;
+        box-sizing: border-box;
+        float: left;
       }
-      .content h2 {
+      main h2 {
         margin-top: 0;
       }
-      .content h5 {
+      main h5 {
         margin-top: -20px;
         color: gray;
         margin-bottom: 10px;
       }
-      .content h5 a {
+      main h5 a {
         text-decoration: none;
         color: black;
       }
-      .content p {
+      main p {
         font-family: Poppins, sans-serif;
+      }
+
+      aside {
+        width: 300px;
+        float: right;
+      }
+
+      aside p {
+        font-size: 10px;
+        font-family: Poppins, sans-serif;
+        line-height: 15px;
+        margin: 18px;
+      }
+
+      .profil {
+        width: 80px;
+        height: 80px;
+        float: left;
+        margin: 10px;
+        overflow: hidden;
+      }
+      .profil img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        filter: saturate(150%);
+      }
+
+      .fanspage {
+        width: 100%;
+      }
+      .fanspage .fp {
+        width: 255px;
+        margin: 15px;
+        height: 100px;
+        border-radius: 10px;
+        border: 2px solid #ff4d6d;
+        transition: 1s;
+        overflow: hidden;
+      }
+      .fanspage .fp:hover {
+        filter: opacity(80%);
+        cursor: pointer;
+      }
+      .fanspage .fp img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .fanspage p {
+        margin: 18px;
+      }
+      .fanspage .tombol {
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+      }
+      .fanspage .tombol a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #000;
+        padding: 0.3px 20px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: #ff4d6d;
+      }
+
+      .fanspage .tombol a:hover {
+        background-color: #fe91a5;
+        color: red;
       }
       footer {
         height: 80px;
@@ -109,6 +182,16 @@
       footer p {
         padding: 20px;
         font-size: smaller;
+      }
+      /* Clear Fix */
+      .cf:before,
+      .cf:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+      }
+
+      .cf:after {
+        clear: both;
       }
 
       /* Responsive */
@@ -121,6 +204,20 @@
           width: 100%;
           height: auto;
           overflow: hidden;
+        }
+        main {
+          width: 100%;
+          box-sizing: border-box;
+          float: none;
+        }
+        aside {
+          margin-left: 20px;
+          box-sizing: border-box;
+          width: 94%;
+          float: none;
+        }
+        aside p {
+          padding-right: 30px;
         }
       }
     </style>
@@ -149,21 +246,45 @@
       </section>
 
       <!-- Content -->
-      <article class="content">
-        <h2>Judul Artikel</h2>
-        <h5>Ditulis oleh <a href="#">Habib Ahmad</a>. 22 Februari 2024</h5>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum commodi est temporibus harum architecto ex sequi ea dolore in eaque optio nisi voluptas omnis, quo iure quae praesentium ducimus alias voluptatibus quidem dolor
-          laboriosam nihil et neque? Deserunt, culpa repudiandae.
-        </p>
+      <article class="content cf">
+        <main>
+          <h2>Judul Artikel</h2>
+          <h5>Ditulis oleh <a href="#">Habib Ahmad</a>. 22 Februari 2024</h5>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum commodi est temporibus harum architecto ex sequi ea dolore in eaque optio nisi voluptas omnis, quo iure quae praesentium ducimus alias voluptatibus quidem dolor
+            laboriosam nihil et neque? Deserunt, culpa repudiandae.
+          </p>
 
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum modi quasi quisquam nostrum, natus ducimus odit sequi itaque, nemo facere ex debitis quae a. Repudiandae, dolorum porro amet laudantium eos explicabo! Aut alias non
-          itaque mollitia sequi nesciunt, harum exercitationem ex cumque? Beatae, nesciunt esse! Magni cum est pariatur maxime adipisci veniam vel ullam aliquid quas similique? Fugiat facilis dicta necessitatibus officiis modi rem,
-          voluptate harum accusantium, placeat consequuntur asperiores eveniet? Maxime est quisquam magnam laudantium optio quidem, fuga quas molestiae labore ea maiores hic possimus officiis minima voluptatum assumenda unde error
-          repudiandae facere inventore deleniti non, saepe officia obcaecati.
-        </p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur blanditiis fuga quasi sed, earum distinctio itaque? Mollitia atque nam aperiam!</p>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum modi quasi quisquam nostrum, natus ducimus odit sequi itaque, nemo facere ex debitis quae a. Repudiandae, dolorum porro amet laudantium eos explicabo! Aut alias non
+            itaque mollitia sequi nesciunt, harum exercitationem ex cumque? Beatae, nesciunt esse! Magni cum est pariatur maxime adipisci veniam vel ullam aliquid quas similique? Fugiat facilis dicta necessitatibus officiis modi rem,
+            voluptate harum accusantium, placeat consequuntur asperiores eveniet? Maxime est quisquam magnam laudantium optio quidem, fuga quas molestiae labore ea maiores hic possimus officiis minima voluptatum assumenda unde error
+            repudiandae facere inventore deleniti non, saepe officia obcaecati.
+          </p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur blanditiis fuga quasi sed, earum distinctio itaque? Mollitia atque nam aperiam!</p>
+        </main>
+        <aside>
+          <h2>About Me</h2>
+          <div class="profil">
+            <img src="./img/NGNL.jpg" alt="" />
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque maxime provident rerum recusandae aliquid laudantium accusantium dolor consectetur sed molestias. Deserunt esse molestias temporibus</p>
+
+          <div class="fanspage">
+            <h2>My Fanspage</h2>
+            <div class="fp">
+              <img src="./img/NGNL.jpg" alt="" />
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat.
+            </p>
+            <div class="tombol">
+              <a href="#">❤</a>
+              <a href="#">Ikuti</a>
+            </div>
+          </div>
+        </aside>
       </article>
 
       <!-- Footer -->
